@@ -7,6 +7,4 @@
 
 <p> 잘 나와서 과제 통과된다면 그때 기깔나는 페이지를 만들어 올려주겠어요</p>
 
-![kakao](https://github.com/LikeLion-at-CAU-12th/Juyoung-Lee/assets/162876023/42a91c72-ab55-4662-8720-12b73f1d1ef1)
-
-
+![kakao](https://github.com/LikeLion-at-CAU-12th/Juyoung-Lee/assets/162876023/18242a11-268f-4efd-8862-c078fd620aba)
