@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
+
+* { font-family: "Orbit", sans-serif;
+}
+
+#title {
+    text-align: center;
+    font-feature-settings: 80px;
+}
+
+img {
+    height: 300px;
+    margin-left: 30%;
+    margin-right: 50PX;
+
+}
+
+p {
+    background-color: darkorange;
+}
+
+a:link {
+    color : rgb(107, 107, 107);
+    text-decoration: none;
+}
+
+a:visited {
+    color :rgb(78, 78, 78); 
+    text-decoration: none;
+}
+
+a:hover {
+    color :chocolate;
+    text-decoration:none;
+}
+
+a:active {
+    color :chocolate;
+    text-decoration:none;
+}
