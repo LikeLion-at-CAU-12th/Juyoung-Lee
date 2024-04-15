@@ -36,12 +36,8 @@ button {
   border-radius: 50%;
   font-size: 15px;
 }
-#dark-mode {
-  font-size: 15px;
-  border-radius: 50%;
-  font-size: 15px;
-} 
-/*리셋버튼과 동일한 버튼을 원해서 위 속성을 그대로 가져옴*/
+
+
 
 .change-reverse {
   border: black solid 2px;
@@ -178,4 +174,51 @@ button {
 #display-title {
     width: 100px;
     text-align: center;
+}
+
+/*  게임 하단 부분에 다크모드 버튼을 생성하기를 원함*/
+/* 다크모드 구현을 여러 방식으로 했음 그중 하나(현재는 input으로 해보는중)
+#dark-mode {
+  font-size: 25px;
+  width: 120px;
+  height: 30px;
+  padding: 10px 25px;
+  font-family: "Delicious Handrawn";
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+} 
+
+#dark-mode:after {
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 6px;
+  width: 90%;
+  height: 70%;
+  border: 3px solid #000;
+  border-radius: 10%;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+#dark-mode:hover:after {
+  opacity:1;
+} /* 불투명도를 높여 커서를 올렸을때 해당 버튼이 활성화됨을 나타냄" */
+*/
+
+
+.day {
+  background-color: white;
+  color : black;
+}
+
+.night {
+  background-color: black;
+  color : white;
+  
 }

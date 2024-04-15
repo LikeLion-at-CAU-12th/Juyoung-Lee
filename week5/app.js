@@ -50,6 +50,7 @@ function start(myChoice) {
     displayComChoice(resultArray);
     displayresult(myChoice, comChoice);
     count();
+   
 }
 
 //47번째 줄에서 myCoice라는 변수?는 따로 선언 ㄴ?근데 사용 내가 못찾은건가 ->승패에서 ComChoice를 쓰고싶었는데 여기서 고민이었음
@@ -92,6 +93,23 @@ function count() { //count라는 기능을 한 블록안에 설정함
 
 
 //실습3. 다른 웹페이지들처럼 스타일요소에 접근하여 컬러를 바꾸는 다크모드 구현하기(공부)
+const darkBtn = document.querySelector("#darkmode");
+const body = document.querySelector('body');
+
+function modeChange () {
+    if(darkBtn.value === "night") {
+        body.classList.add("night");
+        body.classList.remove("day");
+        darkBtn.value = "day";
+    } else {
+        body.classList.remove("night");
+        body.classList.add("day");
+        darkBtn.value = "night";
+
+    }
+}
+
+darkBtn.addEventListener("click", modeChange);
 
 
 //새로하기 이벤트 발생시키기
