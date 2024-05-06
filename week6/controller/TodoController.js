@@ -10,6 +10,8 @@ class TodoController {
         this.comBtnNode = this.newTodo.getCompleteBtn();
         this.innerNode = this.newTodo.getInnerText();
 
+        this.todo = todo;
+
          //완성.삭제하는 부분에 이벤트 넣기
         this.delBtnNode.addEventListener('click', ()=>{
             this.delTodo();
@@ -31,9 +33,8 @@ class TodoController {
         todoList.removeChild(this.newTodo.getRow()); //getrow전체를 리턴
     }
     doneTodo(){ //완성되었을때 //완성을 누르면 열이 삭제되고 com으로 열이 옮겨가기,
-        //comcontroller를 사용하여 열 추가되기
-        const comdo = {}; //객체를 생성한 거임 변수를 생성해야하는데
-        this.CompleteController = new CompleteController(comdo);
+        
+        this.CompleteController = new CompleteController(this.todo);
         this.CompleteController.addcomdo(); //comcontroller에 있는 addcomdo메서드 실행
 
 

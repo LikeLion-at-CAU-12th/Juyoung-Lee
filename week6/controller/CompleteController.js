@@ -10,6 +10,8 @@ class CompleteController {
         this.retrunBtnNode = this.newcomdo.getRetrunBtn();
         this.innerNode = this.newcomdo.getInnerText();
 
+        this.comdo = comdo;
+
          
         this.delBtnNode.addEventListener('click', ()=>{
             this.delcomdo();
@@ -21,10 +23,10 @@ class CompleteController {
 
     addcomdo(){ //todo에서 완료시 해당 task가 com에 붙여지기 
         const comList = document.getElementById("complete-list");
-        //const input = document.querySelector('input');
+        const input = document.querySelector('input');
         
         comList.appendChild(this.newcomdo.addRow());
-        //input.value = ''; //모든 처리가 완료되면 다시 따옴표로 초기화
+        input.value = ''; //모든 처리가 완료되면 다시 따옴표로 초기화
     }
 
     delcomdo() { //delBtn 클릭시 시행될 메서드
@@ -34,8 +36,8 @@ class CompleteController {
     }
 
     returncomdo() { //doneBtn 클릭시 시행될 메서드(미완 클릭 시 Todo영역으로 보내기)
-        const Todo = {};
-        this.TodoController = new TodoController(Todo);
+        
+        this.TodoController = new TodoController(this.comdo);
         this.TodoController.addTodo();
 
         this.delcomdo();
