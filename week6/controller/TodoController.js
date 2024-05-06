@@ -32,7 +32,7 @@ class TodoController {
     }
     doneTodo(){ //완성되었을때 //완성을 누르면 열이 삭제되고 com으로 열이 옮겨가기,
         //comcontroller를 사용하여 열 추가되기
-        const comdo = {};
+        const comdo = {}; //객체를 생성한 거임 변수를 생성해야하는데
         this.CompleteController = new CompleteController(comdo);
         this.CompleteController.addcomdo(); //comcontroller에 있는 addcomdo메서드 실행
 

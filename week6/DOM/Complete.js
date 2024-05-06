@@ -11,12 +11,12 @@ class Comdo{
         this.delBtn = new Button('삭제', 'del-btn');
         this.delBtn.node.src = "../week6/x.png";
     }
-    addRow(){
-        [this.textBox, this.returnBtn, this.delBtn].forEach((dom) => {
-            this.row.appendChild(dom.node);
-        })
+    addRow() {
+        [this.textBox, this.retrunBtn, this.delBtn].forEach((dom) => {
+          this.row.appendChild(dom.node);
+        });
         return this.row;
-    }
+      }
     getRow(){
         return this.row;
     }

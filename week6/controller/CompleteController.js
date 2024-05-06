@@ -34,6 +34,7 @@ class CompleteController {
     }
 
     returncomdo() { //doneBtn 클릭시 시행될 메서드(미완 클릭 시 Todo영역으로 보내기)
+        const Todo = {};
         this.TodoController = new TodoController(Todo);
         this.TodoController.addTodo();
 
