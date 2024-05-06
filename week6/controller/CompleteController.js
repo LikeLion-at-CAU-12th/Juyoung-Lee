@@ -1,5 +1,5 @@
 import Todo from "../DOM/Todo.js";
-import Com from "../DOM/Complete.js";
+import Comdo from "../DOM/Complete.js";
 import TodoController from "./TodoController.js";
 
 class CompleteController {
