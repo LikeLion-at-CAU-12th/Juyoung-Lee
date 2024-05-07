@@ -53,6 +53,12 @@ async function getData() { //asyne 이 함수는 비동기적인 함수고 promi
         const button = document.createElement('button');
         button.innerText = "더보기" ;
 
+        //버튼 클릭시 add페이지로 이동
+        button.addEventListener("click", () => {
+          location.href = `./add.html?${data}`;
+        })
+        
+
         //리스트라는 디브 태그 안에 넣을 요소들 다 만들었음
 
         //이제 넣으면 되겟지 listChild 이용해서
@@ -69,3 +75,4 @@ async function getData() { //asyne 이 함수는 비동기적인 함수고 promi
 
 //구성:각 하나가 리스트 그 안에 이미지 태그, 태그 넣기
 //그리드 모양 위해 css파일로 가자격자 
+
