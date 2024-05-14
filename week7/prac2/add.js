@@ -19,8 +19,7 @@ const option = {
 
 //location.search 안에 존재하는 키-값으로 파라미터 가져오기
 const urlParams = new URLSearchParams(window.location.search);
-const json = JSON.stringify(urlParams);
-const obj = JSON.parse(json); //js객체로 변경 
+
 getadd();
 
   //add.html구성하기
@@ -29,21 +28,23 @@ async function getadd() {
     //파라미터도 불러오기
     
     //urlParams의 데이터를 각 변수로 저장하기
-    const title = obj.title; //값인 %{data.galTitle}이 불러와짐 ..
-    //const image = urlParams.get('image');
-    const loca = obj.loca;
-    const photoG = obj.photoG;
-    const keyword= obj.keyword;
-    const date = obj.date;
+    const title = urlParams.get("title"); //값인 %{data.galTitle}이 불러와짐 ..
+    const image = urlParams.get('image');
+    const loca = urlParams.get("loca");
+    const photoG = urlParams.get("photoG");
+    const keyword= urlParams.get("keyword");
+
+    //date 보기좋게 바꾸기
+    const date = urlParams.get("date");
+    const year = date.substring(0,4);
+    const month = date.substring(4,6);
+    const day = date.substring(6,8);
 
 
     //Dom요소 만들기
     const addbox = document.createElement('div');
     addbox.id = "addbox";
 
-    //const addtitle = urlParams.get('title');
-
-    //const addtitle = document.createElement('span');
     const addtitle = document.createElement('span');
     addtitle.innerText = `${title}`;
     //index.js에서 아예 데이터를 보냇기에 이렇게 작성해봄
@@ -51,11 +52,11 @@ async function getadd() {
     const addloca = document.createElement('span');
     addloca.innerText = `장소 : ${loca}`;
 
-    //const addimage = document.createElement('img'); 
-    //addimage.src = data.galWebImageUrl;
+    const addimage = document.createElement('img'); 
+    addimage.src = urlParams.get("image");
 
     const adddate = document.createElement('span'); 
-    adddate.innerText = `촬영날짜 : ${date}`
+    adddate.innerText = `촬영날짜 : ${year} / ${month} / ${day}`
 
     const addphotoG = document.createElement('span');
     addphotoG.innerText = `촬영자 : ${photoG}`;
