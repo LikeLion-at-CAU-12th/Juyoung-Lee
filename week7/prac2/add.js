@@ -18,12 +18,12 @@ const option = {
  // console.log(decodeURI(adddata));
 
 //location.search 안에 존재하는 키-값으로 파라미터 가져오기
-const urlParams = new URLSearchParams(window.location.search);
+const data = new URLSearchParams(window.location.search);
 getadd();
 
   //add.html구성하기
 async function getadd() {
-  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&pageNo=${random}&serviceKey=${option.serviceKey}`;
+  //const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
     //파라미터도 불러오기
 
 
@@ -31,10 +31,10 @@ async function getadd() {
     const addbox = document.createElement('div');
     addbox.id = "addbox";
 
-    const addtitle = urlParams.get('title');
+    //const addtitle = urlParams.get('title');
 
-    const adetitle = document.createElement('span');
-    adetitle.innerText = `${data.galTitle}`;
+    const addtitle = document.createElement('span');
+    addtitle.innerText = `${data.galTitle}`;
     //index.js에서 아예 데이터를 보냇기에 이렇게 작성해봄
 
     const loca = document.createElement('span');
@@ -62,3 +62,4 @@ async function getadd() {
     addContainer.appendChild(addbox); //위의 것들을 컨테이너에 넣기 
 
   };
+
