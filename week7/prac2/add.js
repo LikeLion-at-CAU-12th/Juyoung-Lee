@@ -18,13 +18,23 @@ const option = {
  // console.log(decodeURI(adddata));
 
 //location.search 안에 존재하는 키-값으로 파라미터 가져오기
-const data = new URLSearchParams(window.location.search);
+const urlParams = new URLSearchParams(window.location.search);
+const json = JSON.stringify(urlParams);
+const obj = JSON.parse(json); //js객체로 변경 
 getadd();
 
   //add.html구성하기
 async function getadd() {
   const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
     //파라미터도 불러오기
+    
+    //urlParams의 데이터를 각 변수로 저장하기
+    const title = obj.title; //값인 %{data.galTitle}이 불러와짐 ..
+    //const image = urlParams.get('image');
+    const loca = obj.loca;
+    const photoG = obj.photoG;
+    const keyword= obj.keyword;
+    const date = obj.date;
 
 
     //Dom요소 만들기
@@ -34,31 +44,31 @@ async function getadd() {
     //const addtitle = urlParams.get('title');
 
     //const addtitle = document.createElement('span');
-    const addtitle = document.querySelector('title');
-    addtitle.innerText = `${data.galTitle}`;
+    const addtitle = document.createElement('span');
+    addtitle.innerText = `${title}`;
     //index.js에서 아예 데이터를 보냇기에 이렇게 작성해봄
 
-    const loca = document.createElement('span');
-    loca.innerText = `장소 : ${data.galPhotographyLocation}`;
+    const addloca = document.createElement('span');
+    addloca.innerText = `장소 : ${loca}`;
 
-    const image = document.createElement('img'); 
-    image.src = data.galWebImageUrl;
+    //const addimage = document.createElement('img'); 
+    //addimage.src = data.galWebImageUrl;
 
-    const date = document.createElement('span'); 
-    date.innerText = `촬영날짜 : ${data.galCreatedtime}`
+    const adddate = document.createElement('span'); 
+    adddate.innerText = `촬영날짜 : ${date}`
 
-    const photoG = document.createElement('span');
-    photoG.innerText = `촬영자 : ${data.galPhotographer}`;
+    const addphotoG = document.createElement('span');
+    addphotoG.innerText = `촬영자 : ${photoG}`;
 
-    const keyword = document.createElement('span');
-    keyword.innerText = `#키워드 모음# ${data.galSearchkeyword}`;
+    const addkeyword = document.createElement('span');
+    addkeyword.innerText = `#키워드 모음# ${keyword}`;
 
     addbox.appendChild(addtitle);
-    addbox.appendChild(loca);
-    addbox.appendChild(image);
-    addbox.appendChild(date);
-    addbox.appendChild(photoG);
-    addbox.appendChild(keyword);
+    addbox.appendChild(addloca);
+    //addbox.appendChild(addimage);
+    addbox.appendChild(adddate);
+    addbox.appendChild(addphotoG);
+    addbox.appendChild(addkeyword);
 
     addContainer.appendChild(addbox); //위의 것들을 컨테이너에 넣기 
 
