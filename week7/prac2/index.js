@@ -56,7 +56,7 @@ async function getData() { //asyne 이 함수는 비동기적인 함수고 promi
 
         //버튼 클릭시 add페이지로 이동
         button.addEventListener("click", () => {
-          window.open("./add.html?title=${data.galTitle}&loca=${data.galPhotographyLocation}&image=${data.galWebImageUrl}&date=${data.galCreatedtime}&photoG=${galPhotographer}&keyword=${galSearchKeyword}")
+          location.href = "./add.html?title=${data.galTitle}&loca=${data.galPhotographyLocation}&image=${data.galWebImageUrl}&date=${data.galCreatedtime}&photoG=${galPhotographer}&keyword=${galSearchKeyword}";
         })
         
 

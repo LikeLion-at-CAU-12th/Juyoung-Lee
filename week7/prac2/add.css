@@ -4,5 +4,22 @@ body {
 
 img {
     height: 500px;
+    width: 90%;
+    object-fit : cover;
     
+}
+
+#addcontainer {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+#addbox {
+    display : flex;
+    align-items: center;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

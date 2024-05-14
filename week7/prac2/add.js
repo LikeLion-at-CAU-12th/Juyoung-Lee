@@ -23,7 +23,7 @@ getadd();
 
   //add.html구성하기
 async function getadd() {
-  //const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
+  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
     //파라미터도 불러오기
 
 
@@ -33,7 +33,8 @@ async function getadd() {
 
     //const addtitle = urlParams.get('title');
 
-    const addtitle = document.createElement('span');
+    //const addtitle = document.createElement('span');
+    const addtitle = document.querySelector('title');
     addtitle.innerText = `${data.galTitle}`;
     //index.js에서 아예 데이터를 보냇기에 이렇게 작성해봄
 
@@ -43,7 +44,7 @@ async function getadd() {
     const image = document.createElement('img'); 
     image.src = data.galWebImageUrl;
 
-    const date = document.createElement('span');
+    const date = document.createElement('span'); 
     date.innerText = `촬영날짜 : ${data.galCreatedtime}`
 
     const photoG = document.createElement('span');
