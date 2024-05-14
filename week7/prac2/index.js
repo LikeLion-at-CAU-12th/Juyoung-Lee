@@ -26,10 +26,10 @@ async function getData() { //asyne 이 함수는 비동기적인 함수고 promi
 
     //패치랑 댄 안해도 ㅇㅋ
     const fetchData = await fetch(url);
-    console.log(fetchData);
+    // console.log(fetchData);
 
     const toJson = await fetchData.json();
-    console.log(toJson);
+    // console.log(toJson);
 
     const datas = await toJson.response.body.items.item; //원하는 배열만 불러오기
     console.log(datas);
@@ -49,13 +49,14 @@ async function getData() { //asyne 이 함수는 비동기적인 함수고 promi
         ${i+1 + 5 * count}번째 
         제목 : ${data.galTitle}
         장소 : ${data.galPhotographyLocation}`;
+        
 
         const button = document.createElement('button');
         button.innerText = "더보기" ;
 
         //버튼 클릭시 add페이지로 이동
         button.addEventListener("click", () => {
-          location.href = `./add.html?${data}`;
+          window.open("./add.html?title=${data.galTitle}&loca=${data.galPhotographyLocation}&image=${data.galWebImageUrl}&date=${data.galCreatedtime}&photoG=${galPhotographer}&keyword=${galSearchKeyword}")
         })
         
 
