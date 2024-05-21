@@ -1,0 +1,27 @@
+body {
+    background-color: #e2e2e2;
+  }
+  
+  #container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  
+  #list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+  }
+  
+  img {
+    width: 90%;
+    height : 200px;
+    object-fit : cover;
+  }
