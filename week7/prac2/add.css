@@ -10,7 +10,7 @@ img {
 }
 
 #addcontainer {
-    width: 90%;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;

@@ -24,8 +24,8 @@ getadd();
 
   //add.html구성하기
 async function getadd() {
-  const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
-    //파라미터도 불러오기
+ // const url = `${baseURL}/galleryList1?numOfRows=${option.numofRows}&MobileApp=${option.MobileApp}&MobileOS=${option.MobileOS}&arrange=${option.arrange}&_type=${option._type}&serviceKey=${option.serviceKey}`;
+    //파라미터도 불러오기 /는 필요없어서 주석처리함.
     
     //urlParams의 데이터를 각 변수로 저장하기
     const title = urlParams.get("title"); //값인 %{data.galTitle}이 불러와짐 ..
@@ -53,7 +53,7 @@ async function getadd() {
     addloca.innerText = `장소 : ${loca}`;
 
     const addimage = document.createElement('img'); 
-    addimage.src = urlParams.get("image");
+    addimage.src = image;
 
     const adddate = document.createElement('span'); 
     adddate.innerText = `촬영날짜 : ${year} / ${month} / ${day}`
@@ -66,7 +66,7 @@ async function getadd() {
 
     addbox.appendChild(addtitle);
     addbox.appendChild(addloca);
-    //addbox.appendChild(addimage);
+    addbox.appendChild(addimage);
     addbox.appendChild(adddate);
     addbox.appendChild(addphotoG);
     addbox.appendChild(addkeyword);
