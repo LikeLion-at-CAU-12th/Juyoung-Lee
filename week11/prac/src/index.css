@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'DOSPilgiMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSPilgiMedium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{
+  font-size: 62.5%; /*1rem = 10px*/
+  font-family: 'DOSPilgiMedium';
+}
+
+body {
+  margin: 0;
+  background-color: rgb(255, 223, 164);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
