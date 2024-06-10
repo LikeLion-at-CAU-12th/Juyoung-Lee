@@ -5,9 +5,34 @@ import { getPerPage } from '../../apis/userlist';
 
 const PageSelection = ({curPage, setUserData, setCurPage}) => {
     const handleClick = async(page) => {
-        const response = await getPerPage(page);
-        setUserData(response);
-        setCurPage(page);//페이지 그대로 전달
+        const response = await getPerPage();
+        const offset = 5;
+        
+        if (page=== 1){
+            
+            setUserData(response.slice(0, offset)); 
+            setCurPage(1);
+        } else if (page ===2){
+            setUserData(response.slice(5, 10)); 
+            setCurPage(2);
+        } else if (page ===3){
+            setUserData(response.slice(10, 15)); 
+            setCurPage(3);
+        } else if (page ===4){
+            setUserData(response.slice(15, 20)); 
+            setCurPage(4);
+        } else if (page ===5){
+            setUserData(response.slice(20, 25)); 
+            setCurPage(5);
+        } else {
+            setUserData(response.slice(25, 30));
+            setCurPage(6);
+        }
+
+
+        //setUserData(response.slice(0, offset)); //response값 저장.
+        //console.log(response);
+        //setCurPage(page);//페이지 그대로 전달
     }
     
     return (

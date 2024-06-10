@@ -1,9 +1,12 @@
 import axios from "axios";
+import {UserFilter} from '../components/user/PageSelection';
 
 export const baseURL = "https://gominzipsession.o-r.kr" ;
 
+const offset = 5;
+
 export const getPerPage = async(page) =>{
-    const response = await axios.get(`${baseURL}/lionlist?page=${page}`);
+    const response = await axios.get(`${baseURL}/lionlist?page=${page}/?offset=${offset}&limit=${offset}`);
     return response.data;
 }
 
