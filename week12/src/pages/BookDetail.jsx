@@ -1,10 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import styled from 'styled-components';
-
-
-
+import styled from 'styled-components'
 
 export const BookDetail = () => {
     //useparams이용해서 객체형식으로 가져올수

@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import { BookList } from "./pages/BookList";
 import { Route, Routes } from "react-router-dom";
 import { BookDetail } from "./pages/BookDetail";
+import LionTest from "./pages/LionTest";
+import LionQ from "./pages/LionQ";
 
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
         <Route path="/books" element={<BookList />}>
           <Route path=":id" element={<BookDetail/>} />
 
+        </Route>
+        <Route path="/liontest" element={<LionTest />}>
+          <Route path=":LionQ" element={<LionQ/>}/>
         </Route>
       </Routes>
     </AppDom>

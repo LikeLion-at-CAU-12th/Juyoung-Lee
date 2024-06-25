@@ -9,6 +9,9 @@ const Home = () => {
         <StyledLink to="/books">
             📚Book List
         </StyledLink>
+        <StyledLink to="/liontest">
+            🦁멋사인 테스트
+        </StyledLink>
     </MenuDom>
   )
 }
