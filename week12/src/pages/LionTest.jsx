@@ -1,14 +1,12 @@
 import axios from 'axios';
-import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { useNavigate, Outlet } from 'react-router-dom';
 
 
 const LionTest = () => {
     const [Qlist, setQlist] = useState([]); //질문리스트
-    const [selAns, setselAns] = useState([]); //선택값 받아오기
+    const [selAns, setSelAns] = useState([]); //선택값 받아오기
     const baseURL = "https://gominzipsession.o-r.kr" //반복되는 베이스URL 변수로 
     
     useEffect(()=>{
@@ -19,11 +17,10 @@ const LionTest = () => {
             setQlist(response.data.questions); //set에 받아온 데이터 저장하기
         };
         fetchQlist(); //여기까지 첫 ,,화면에 보일것.(타이틀이 뜨는것)
-    }, [] //두번째 인자가 빈배열일때, 처음에만 ...
-);
+    }, [] );//두번째 인자가 빈배열일때, 처음에만 ...
 
-    const handleselAns = (questionId, choiceIdx) => {
-     setselAns(selAns => ({
+    const handleSelAns = (questionId, choiceIdx) => {
+     setSelAns(selAns => ({
          ...selAns,
          [questionId]: choiceIdx
      }));
@@ -43,8 +40,9 @@ const LionTest = () => {
                 <Title>멋사인 테스트</Title>
                 
             </LionTestDom>
+            
             <LionQDom>
-                <Outlet context={{Qlist, selAns, handleselAns}}/> 
+             <Outlet context={{ Qlist, selAns, handleSelAns }} />
             </LionQDom>
     </MenuDom>
     );
@@ -95,3 +93,4 @@ const LionQDom = styled.div`
 
   
 `;
+
