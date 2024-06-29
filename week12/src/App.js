@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Home from "./pages/Home";
 import { BookList } from "./pages/BookList";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link, Outlet, useParams } from "react-router-dom";
 import { BookDetail } from "./pages/BookDetail";
 import LionTest from "./pages/LionTest";
 import LionQ from "./pages/LionQ";
@@ -16,11 +16,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/books" element={<BookList />}>
           <Route path=":id" element={<BookDetail/>} />
-
         </Route>
+
         <Route path="/liontest" element={<LionTest />}>
           <Route path=":question" element={<LionQ/>} />
           <Route path=":result/:num" element={<LionResult/>}/>
+
         </Route>
       </Routes>
     </AppDom>

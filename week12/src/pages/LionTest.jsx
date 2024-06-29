@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { useNavigate, Outlet } from 'react-router-dom';
+import LionQ from './LionQ';
 
 
 const LionTest = () => {
@@ -12,7 +13,7 @@ const LionTest = () => {
     useEffect(()=>{
         const fetchQlist = async() => {
             const response = await axios.get(`${baseURL}/liontest/question`);
-            console.log(response.data.questions); //받아와지는지 확인
+            //console.log(response.data.questions); //받아와지는지 확인
 
             setQlist(response.data.questions); //set에 받아온 데이터 저장하기
         };
@@ -21,8 +22,7 @@ const LionTest = () => {
 
     const handleSelAns = (questionId, choiceIdx) => {
      setSelAns(selAns => ({
-         ...selAns,
-         [questionId]: choiceIdx
+         ...selAns, [questionId]: choiceIdx
      }));
         console.log(selAns);
     }
@@ -42,8 +42,9 @@ const LionTest = () => {
             </LionTestDom>
             
             <LionQDom>
-             <Outlet context={{ Qlist, selAns, handleSelAns }} />
+             <LionQ Qlist={Qlist} selAns={selAns} handleSelAns={handleSelAns} />
             </LionQDom>
+            
     </MenuDom>
     );
 };

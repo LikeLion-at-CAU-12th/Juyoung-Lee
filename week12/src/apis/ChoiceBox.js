@@ -19,11 +19,10 @@ const StyledChoiceBox = styled.div`
   height: 30px;
   font-size: 13px;
   color: #4a4a4a;
-  background-color: ${(props) => props.$active ? "rgba(255,179,122,1)" : "#C9C9C9"};
+  background-color: ${(props) => props.$active ? "#9fe5ff" : "#C9C9C9"};
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   font-weight: 500;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   margin: 5px;
 `;

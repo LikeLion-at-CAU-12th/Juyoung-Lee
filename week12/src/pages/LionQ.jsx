@@ -4,18 +4,18 @@ import { useOutletContext } from 'react-router-dom';
 import ChoiceBox from '../apis/ChoiceBox';
 import SubmitButton from '../apis/SubmitButton';
 
-const LionQ = () => {
-  const { Qlist, selAns, handleSelAns } = useOutletContext(); //LionTest.jsx에서 보낸 데이터 받기
-  console.log('Qlist:', Qlist);
-  console.log('selAns:', selAns);
-  console.log('handleSelAns:', handleSelAns); //지금 현재 이 데이터가 안받아와지는듯
 
+const LionQ = ({ Qlist, selAns, handleSelAns }) => {
+  //const { Qlist, selAns, handleSelAns } = useOutletContext(); //LionTest.jsx에서 보낸 데이터 받기
+  //console.log('Qlist:', Qlist);
+  
+ 
   return (
     <div>
       <LionQDom>
         {Qlist.map((question) => (
           <div key={question.id}>
-            <SemiTitle>{question.question}</SemiTitle>
+            <h2>{question.question}</h2>
             <ChoiceBoxes>
               {question.choices.map((choice, idx) => (
                 <ChoiceBox
@@ -28,7 +28,7 @@ const LionQ = () => {
             </ChoiceBoxes>
           </div>
         ))}
-        <SubmitButton selAns={selAns} to="/liontest/result" />
+        <SubmitButton selAns={selAns} to = {"/liontest"} />
       </LionQDom>
     </div>
   );
@@ -59,7 +59,7 @@ const ChoiceBoxes = styled.div`
   gap: 10px;
 `;
 
-const SemiTitle = styled.div`
+const h2 = styled.div`
   background-color: #9fe5ff;
   font-size: 20px;
   color: #535353;

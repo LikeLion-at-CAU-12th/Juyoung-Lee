@@ -33,8 +33,9 @@ const SubmitButton = ({selAns}) => {
                 submitChoices[i-1] = selAns[i] +1;
             }
             console.log(submitChoices);
+            
             const num = await sandData(submitChoices);
-            navigate(`/LionTest/LionResult/${num}`);
+            navigate(`/liontest/result/${num}`);
         }
     }
 
