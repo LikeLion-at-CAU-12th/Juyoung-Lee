@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
 import LionQ from './LionQ';
 import LionResult from './LionResult';
 
@@ -28,10 +28,15 @@ const LionTest = () => {
         console.log(selAns);
     }
 
+    
+
     const navigate = useNavigate();
     const goToHome = () => {
         navigate("/");
     } //홈버튼 클릭시 Home.jsx페이지로 돌아감.
+    const goToQlist = () => {
+        navigate("/liontest/question");
+    }
 
 
     return (
@@ -39,13 +44,12 @@ const LionTest = () => {
             <LionTestDom>
                 <Title onClick={goToHome}>🏠</Title>
                 <Title>멋사인 테스트</Title>
-                
+                <button onClick={goToQlist}>멋사력 퀴즈풀기</button>
             </LionTestDom>
             
             <LionQDom>
-             <LionQ Qlist={Qlist} selAns={selAns} handleSelAns={handleSelAns} />
+            <Outlet context={{Qlist, selAns, handleSelAns}} />
             </LionQDom>
-            
     </MenuDom>
     );
 };
@@ -95,4 +99,3 @@ const LionQDom = styled.div`
 
   
 `;
-

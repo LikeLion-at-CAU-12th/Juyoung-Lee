@@ -5,8 +5,8 @@ import ChoiceBox from '../apis/ChoiceBox';
 import SubmitButton from '../apis/SubmitButton';
 
 
-const LionQ = ({ Qlist, selAns, handleSelAns }) => {
-  //const { Qlist, selAns, handleSelAns } = useOutletContext(); //LionTest.jsx에서 보낸 데이터 받기
+const LionQ = ( ) => {
+  const { Qlist, selAns, handleSelAns } = useOutletContext(); //LionTest.jsx에서 보낸 데이터 받기
   //console.log('Qlist:', Qlist);
   
  
