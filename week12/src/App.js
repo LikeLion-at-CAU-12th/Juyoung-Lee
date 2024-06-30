@@ -19,8 +19,8 @@ function App() {
         </Route>
 
         <Route path="/liontest" element={<LionTest />}>
-          <Route path=":question" element={<LionQ/>} />
-          <Route path=":result/:num" element={<LionResult/>}/>
+          <Route path="question" element={<LionQ/>} />
+          <Route path="result/:num" element={<LionResult/>}/>
 
         </Route>
       </Routes>

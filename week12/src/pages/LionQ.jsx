@@ -28,7 +28,7 @@ const LionQ = ({ Qlist, selAns, handleSelAns }) => {
             </ChoiceBoxes>
           </div>
         ))}
-        <SubmitButton selAns={selAns} to = {"/liontest"} />
+        <SubmitButton selAns={selAns} />
       </LionQDom>
     </div>
   );

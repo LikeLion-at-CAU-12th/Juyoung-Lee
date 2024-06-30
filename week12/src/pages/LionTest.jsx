@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LionQ from './LionQ';
+import LionResult from './LionResult';
 
 
 const LionTest = () => {

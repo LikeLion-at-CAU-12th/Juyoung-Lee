@@ -4,17 +4,15 @@ import { useParams } from 'react-router-dom'
 import styled from 'styled-components';
 
 const LionResult = () =>{
-    const params = useParams();
-    const num = params.num;
+    const score = useParams();
+    const num = score.num; //url가져온 뒤 정답개수
     const [resultImg, setResultImg] = useState('');
     const [resultTitle, setResultTitle] = useState('');
 
-
-
     useEffect(()=>{ 
         const fetchResult = async()=>{
-            const url = `https://gominzipsession.o-r.kr/liontest/result`
-            const response = await axios.get(`${url}/${num}`);
+            const url = `https://gominzipsession.o-r.kr/liontest/result/${num}`
+            const response = await axios.get(url);
             const responseData = response.data;
             console.log(responseData);
             
