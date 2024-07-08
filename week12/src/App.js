@@ -6,6 +6,8 @@ import { BookDetail } from "./pages/BookDetail";
 import LionTest from "./pages/LionTest";
 import LionQ from "./pages/LionQ";
 import LionResult from "./pages/LionResult";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
 
 
 function App() {
@@ -21,8 +23,13 @@ function App() {
         <Route path="/liontest" element={<LionTest />}>
           <Route path="question" element={<LionQ/>} />
           <Route path="result/:num" element={<LionResult/>}/>
-
         </Route>
+
+        <Route path="/login" element={<Login />}> </Route>
+        <Route path="/signup" element={<Signup />}> </Route>
+
+        
+        
       </Routes>
     </AppDom>
   );
