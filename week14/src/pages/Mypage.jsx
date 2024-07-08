@@ -21,7 +21,7 @@ export const Mypage = () => {
     })
     .catch((error)=>{
       alert("토큰 기한 만료");
-      //토큰 기한 만료 시 재로그인 할 수 있게
+      //토큰 기한 만료 시 토큰 삭제 후 로그인 페이지로 이동
       localStorage.removeItem("access");
       localStorage.removeItem("refresh");
       router("/");
