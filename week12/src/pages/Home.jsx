@@ -1,8 +1,34 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import { isLoginAtom } from '../recoil/atom';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+
 
 const Home = () => {
+  //로그인 상태에 따라 로그인, 로그아웃 버튼이 생기도록
+  const [isLogin, setIsLogin] = useRecoilState(isLoginAtom);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const accessToken = localStorage.getItem('access');
+    if (accessToken) {
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  }, [setIsLogin]);
+
+  //로그아웃 버튼 클릭 시 토큰 삭제 및 기존home으로 이동
+  const handleLogout = () => {
+    localStorage.removeItem('access');
+    localStorage.removeItem('refresh');
+    setIsLogin(false);
+    navigate('/');
+  };
+
+
   return (
     <MenuDom>
         <Title>Week12 session</Title>
@@ -12,6 +38,11 @@ const Home = () => {
         <StyledLink to="/liontest">
             🦁멋사인 테스트
         </StyledLink>
+        {isLogin ? (
+        <StyledLink onClick={handleLogout}>🥲로그아웃🥲</StyledLink>
+      ) : (
+        <StyledLink to='/login'>🫥로그인🫥</StyledLink>
+      )}
     </MenuDom>
   )
 }

@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { useNavigate, Outlet } from 'react-router-dom';
 import LionQ from './LionQ';
 import LionResult from './LionResult';
+import { isLoginAtom } from '../recoil/atom';
+import { useRecoilState } from 'recoil';
 
 
 const LionTest = () => {
@@ -31,11 +33,25 @@ const LionTest = () => {
     
 
     const navigate = useNavigate();
+
     const goToHome = () => {
         navigate("/");
     } //홈버튼 클릭시 Home.jsx페이지로 돌아감.
+
+    //로그인상태 atom
+    const [isLogin, setIsLogin] = useRecoilState(isLoginAtom);
+
+    //퀴즈풀기 버튼 클릭시, 로그인 유무에 따라
     const goToQlist = () => {
-        navigate("/liontest/question");
+        const accessToken = localStorage.getItem("access");
+        if (accessToken){
+            setIsLogin(true);
+            navigate('/liontest/question')
+        } else {
+            setIsLogin(false);
+            alert('회원만 테스트에 참여하실 수 있습니다. 로그인 창으로 이동합니다.')
+            navigate('/login');
+        }
     }
 
 
@@ -44,7 +60,7 @@ const LionTest = () => {
             <LionTestDom>
                 <Title onClick={goToHome}>🏠</Title>
                 <Title>멋사인 테스트</Title>
-                <button onClick={goToQlist}>멋사력 퀴즈풀기</button>
+                <StyledBtn onClick={goToQlist}>멋사력 퀴즈풀기</StyledBtn>
             </LionTestDom>
             
             <LionQDom>
@@ -99,3 +115,23 @@ const LionQDom = styled.div`
 
   
 `;
+
+const StyledBtn = styled.div`
+    font-weight: 800;
+    background-color: #89cdf6;
+    color: white;
+    padding: 19px;
+    border-radius: 10px;
+    border: none;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 84px;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 0 3px 3px skyblue;
+      color: black;
+      background-color: white;
+    }
+  `;
