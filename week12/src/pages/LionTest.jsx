@@ -49,7 +49,8 @@ const LionTest = () => {
             navigate('/liontest/question')
         } else {
             setIsLogin(false);
-            alert('회원만 테스트에 참여하실 수 있습니다.')
+            alert('회원만 테스트에 참여하실 수 있습니다. 로그인 창으로 이동합니다.')
+            navigate('/login');
         }
     }
 
